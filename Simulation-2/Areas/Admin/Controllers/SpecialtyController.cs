@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Simulation_2.Context;
 using Simulation_2.Helper;
@@ -9,6 +10,7 @@ using Simulation_2.ViewModels.TrainerViewModels;
 namespace Simulation_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class SpecialtyController(AppDbContext _context) : Controller
     {
         public async Task<IActionResult> Index()

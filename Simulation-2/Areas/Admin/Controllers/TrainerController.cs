@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Simulation_2.Context;
@@ -9,7 +10,7 @@ using Simulation_2.ViewModels.TrainerViewModels;
 namespace Simulation_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
+    [Authorize(Roles = "Admin")]
     public class TrainerController : Controller
     {
         private readonly AppDbContext _context;
@@ -31,7 +32,7 @@ namespace Simulation_2.Areas.Admin.Controllers
                 SpecialtyName=x.Specialty.Name
             }).ToListAsync();
 
-            return View(trainers ?? new List<TrainerGetVM>());
+            return View(trainers);
         }
         [HttpGet]
         public async Task<IActionResult> Create()

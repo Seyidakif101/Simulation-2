@@ -7,6 +7,6 @@ namespace Simulation_2.Models
         public string Name { get; set; }= string.Empty;
         public string ImagePath { get; set; } = string.Empty;
         public int SpecialtyId { get; set; }
-        public Specialty Specialty { get; set; } = null!;
+        public Specialty? Specialty { get; set; }
     }
 }
