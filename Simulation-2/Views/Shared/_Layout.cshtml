@@ -52,7 +52,7 @@
 					<span class="icon icon-bar"></span>
 					<span class="icon icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Fitness</a>
+				<a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="navbar-brand">Fitness</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right main-navigation">
@@ -131,6 +131,6 @@
 	<script src="~/js/smoothscroll.js"></script>
 	<script src="~/js/wow.min.js"></script>
 	<script src="~/js/custom.js"></script>
-
+	@RenderSection("Scripts", false)
 </body>
 </html>
